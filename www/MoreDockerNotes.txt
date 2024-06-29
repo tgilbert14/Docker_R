@@ -27,10 +27,16 @@ Set dir-> 'cd ..' to move back directories, then set to directory folder/repo ->
 cd Docker
 
 Then run to get image on docker hub (build/login/push) -> 
+## was this but didn't work the second time??
+##docker build -t tsgilbert/tims-docker-app2:V1 -f Dockerfile .
+##docker login -u "tsgilbert" -p "ShawnTim14!" docker.io
+##docker push tsgilbert/tims-docker-app2:V1
 
-docker build -t tsgilbert/tims-docker-app2:V1 -f Dockerfile .
-docker login -u "tsgilbert" -p "ShawnTim14!" docker.io
-docker push tsgilbert/tims-docker-app2:V1
+## so this (if all on GitHub)
+docker build -t docker_r:V1 -f Dockerfile .
+##docker login -u "tsgilbert" -p "ShawnTim14!" docker.io
+##docker push docker_r:V1
+>skipped the 2 above and pulled from GitHub repo instead...
 
 Then in DockerDesktop, go to images and set port, ran to see if working in container! OR run command ->
 
