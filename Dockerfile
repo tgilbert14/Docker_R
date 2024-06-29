@@ -21,10 +21,10 @@ ENV APP_NAME myShinyApp
 COPY --chown=shinyuser:shinyuser app.R /srv/shiny-server/${APP_NAME}/app.R
 
 # Expose the application port
-EXPOSE 8180
+EXPOSE 8181
 
 # Health check to verify app is running
-HEALTHCHECK CMD curl --fail http://localhost:8180 || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8181 || exit 1
 
 # Run the R Shiny app
 CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/${APP_NAME}')"]
