@@ -23,8 +23,8 @@ RUN R -e 'install.packages(c("dplyr", "ggplot2", "gapminder"))'
 RUN echo "local(options(shiny.port = 8180, shiny.host = '0.0.0.0'))" > /usr/lib/R/etc/Rprofile.site
 
 # Create group for users so not root
-RUN addgroup --system app \
-    && adduser --system --ingroup app app
+#RUN addgroup --system app \
+#    && adduser --system --ingroup app app
     
 # Make a directory in the container
 #RUN mkdir /home/app
@@ -34,10 +34,10 @@ WORKDIR /home/app
 COPY app.R .
 
 # Sets permission for app user
-RUN chown app:app -R /home/app
+#RUN chown app:app -R /home/app
 
 # sets the user or UID when running
-USER app
+#USER app
 
 # Expose the application port
 EXPOSE 8180
