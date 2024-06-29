@@ -43,4 +43,4 @@ COPY app.R .
 EXPOSE 8180
 
 # Run the R Shiny app - default for executing container
-CMD ["R", "-e", "shiny::runApp('/home/app')"]
+CMD ["R", "-e", "shiny::runApp('/home/app', port = 8180, host = '0.0.0.0')"]
