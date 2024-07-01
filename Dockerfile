@@ -20,7 +20,7 @@ RUN install.r shiny
 # Install other R dependencies
 RUN R -e 'install.packages(c("dplyr", "ggplot2", "gapminder"))'
 
-RUN echo "local(options(shiny.port = 8180, shiny.host = '0.0.0.0'))" > /usr/lib/R/etc/Rprofile.site
+RUN echo "local(options(shiny.port = 8181, shiny.host = '0.0.0.0'))" > /usr/lib/R/etc/Rprofile.site
 
 # Create group for users so not root
 #RUN addgroup --system app \
@@ -40,7 +40,7 @@ COPY app.R .
 #USER app
 
 # Expose the application port
-EXPOSE 8180
+EXPOSE 8181
 
 # Run the R Shiny app - default for executing container
-CMD ["R", "-e", "shiny::runApp('/home/app', port = 8180, host = '0.0.0.0')"]
+CMD ["R", "-e", "shiny::runApp('/home/app', port = 8181, host = '0.0.0.0')"]
